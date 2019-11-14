@@ -1,0 +1,12 @@
+version: "2.3"
+services:
+  recurrence_build:
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: pytorch_recurrence_build:latest
+    volumes:
+      - /tmp/out:/out
