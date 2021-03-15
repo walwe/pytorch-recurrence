@@ -9,8 +9,8 @@ namespace {
     */
     template <typename scalar_t>
     __global__ void recurrence_kernel(
-        const torch::PackedTensorAccessor<scalar_t,2,torch::RestrictPtrTraits, size_t> in,
-        torch::PackedTensorAccessor<scalar_t,4,torch::RestrictPtrTraits, size_t> out,
+        const torch::PackedTensorAccessor<scalar_t, 2, torch::RestrictPtrTraits, size_t> in,
+        torch::PackedTensorAccessor<scalar_t, 4, torch::RestrictPtrTraits, size_t> out,
         const int batchSize,
         const int size) {
 

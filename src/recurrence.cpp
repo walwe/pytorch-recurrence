@@ -4,6 +4,12 @@ void recurrence_matrix_calc(torch::Tensor in, torch::Tensor output, int batchSiz
 
 torch::Tensor recurrence_matrix(torch::Tensor x) {
 
+    int expectedDim = 2;
+    if(x.dim() != expectedDim) {
+        fprintf(stderr, "Tensor must have dim %i, and has %li instead\n", expectedDim, x.dim());
+        exit(-1);
+    }
+
     int batchSize = x.size(0);
     int inputSize = x.size(1);
     int channels = 1;
